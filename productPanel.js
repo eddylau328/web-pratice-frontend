@@ -15,14 +15,20 @@ function createItemPanel() {
 function getItem(product) {
 	let item = '';
 	// start
-	item += `<li id="li-${product.id}" page-index="0" style="height: 456px; cursor: pointer;">`;
-	item += `<div id="div-${product.id}" style="cursor: pointer;">`;
+	item += `<li 
+                id="li-${product.id}" 
+                page-index="0" 
+                style="height: 456px; 
+                cursor: pointer;">`;
+
+	item += `<div 
+                id="div-${product.id}">`;
 
 	item += getItemImage(product);
 	item += getItemHeading(product);
 	item += getItemDescription(product);
 	if (product.rating) item += getItemRating(product);
-
+	item += getItemPrice(product);
 	// end
 	item += `</div>`;
 	item += `</li>`;
@@ -32,7 +38,11 @@ function getItem(product) {
 function getItemHeading(product) {
 	// item heading
 	let heading = '';
-	heading += `<h2>${product.brand} ${product.chiName} ${product.engName}</h2>`;
+	heading += `<a 
+                id="anchor-heading-${product.id}" 
+                title="${product.brand} ${product.chiName} ${product.engName}">`;
+	heading += `<h2>${product.brand} ${product.chiName}&nbsp;${product.engName}</h2>`;
+	heading += `</a>`;
 	return heading;
 }
 
@@ -46,20 +56,17 @@ function getItemDescription(product) {
 function getItemImage(product) {
 	let image = '';
 	image += `<div 
-                id="div-image-${product.id}" 
-                style="cursor: pointer;">`;
+                id="div-image-${product.id}">`;
 
 	image += `<a 
-                id="anchor-${product.id}" 
-                href="${product.link}" 
-                style="cursor: pointer;">`;
+                id="anchor-image-${product.id}" 
+                href="${product.link}">`;
 
 	image += `<img
                 src="${product.image}"
                 alt="${product.chiName} ${product.engName}"
                 width="202px"
-                height="202px"
-                style="cursor: pointer;">`;
+                height="202px">`;
 
 	image += `</a>`;
 	image += `</div>`;
@@ -69,6 +76,27 @@ function getItemImage(product) {
 function getItemRating(product) {
 	let rating = '';
 	return rating;
+}
+
+function getItemPrice(product) {
+	let price = '';
+	price += `<div 
+                class="product-price">`;
+
+	price += `<span 
+                id="span-price-${product.id}">`;
+	price += `$${product.price}`;
+	price += `</span>`;
+
+	price += `<a 
+                id="anchor-price-${product.id}" 
+                href="${product.link}#msrp">`;
+	price += `建議零售價`;
+	price += `</a>`;
+
+	price += `</div>`;
+
+	return price;
 }
 
 createItemPanel();
