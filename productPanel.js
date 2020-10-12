@@ -50,7 +50,8 @@ function getItemImage(product) {
                 style="cursor: pointer;">`;
 
 	image += `<a 
-                id="anchor-${product.link}"
+                id="anchor-${product.id}" 
+                href="${product.link}" 
                 style="cursor: pointer;">`;
 
 	image += `<img
