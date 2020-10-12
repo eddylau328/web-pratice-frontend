@@ -12,6 +12,8 @@ const products = [
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/Regenerist%20Super%20sculpting%20cream/3_1200x1200.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-202009161350',
 		ratingImage:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/RatingStars-on.png?v=1-201608042014',
+		link:
+			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-micro-sculpting-super-cream',
 	},
 	{
 		id: 'product-2',
@@ -22,6 +24,8 @@ const products = [
 		price: 219.9,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_4.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201802260630',
+		link:
+			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-micro-sculpting-essence-water',
 	},
 	{
 		id: 'product-3',
@@ -33,6 +37,8 @@ const products = [
 		price: 239.9,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_dc.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201706031115',
+		link:
+			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-micro-sculpting-super-day-cream-spf30',
 	},
 	{
 		id: 'product-4',
@@ -45,6 +51,8 @@ const products = [
 		price: 289.9,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_6.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201802260630',
+		link:
+			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-miracle-boost-concentrate',
 	},
 	{
 		id: 'product-5',
@@ -56,6 +64,8 @@ const products = [
 		price: 239.9,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_1.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201802260630',
+		link:
+			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-micro-sculpting-serum',
 	},
 	{
 		id: 'product-6',
@@ -66,5 +76,7 @@ const products = [
 		price: 119.9,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_fc.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201802260630',
+		link:
+			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-deep-clean-foam-cleanser',
 	},
 ];
