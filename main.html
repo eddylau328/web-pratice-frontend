@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="product-panel"></div>
+</body>
+</html>
+
+<script>
+    function productItem(product) {
+        let item = '';
+        // item heading
+        item += `<h2>${product.brand} ${product.chiName} ${product.engName}</h2>`;
+        // item description
+        item += `<p>${product.description}</p>`;
+        
+        // item rating
+        if (product.rating)
+            item += `<img>`;
+        
+        
+    }
+</script>
