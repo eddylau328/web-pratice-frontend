@@ -29,6 +29,7 @@ function getItem(product) {
 	item += getItemDescription(product);
 	if (product.rating) item += getItemRating(product);
 	item += getItemPrice(product);
+	item += getCompareCheckBox(product);
 	// end
 	item += `</div>`;
 	item += `</li>`;
@@ -97,6 +98,38 @@ function getItemPrice(product) {
 	price += `</div>`;
 
 	return price;
+}
+
+function getCompareCheckBox(product) {
+	let checkbox = '';
+	checkbox += `<p 
+                id="p-checkbox-compare-${product.id}" 
+                class="product-compare">`;
+	checkbox += `<div 
+                    class="checker" 
+                    id="div-checkbox-compare-${product.id}">`;
+
+	checkbox += `<span>`;
+	checkbox += `<input 
+                    name="input-checkbox-compare-name-${product.id}" 
+                    type="checkbox" 
+                    id="input-checkbox-compare-${product.id}">`;
+	checkbox += `</span>`;
+	checkbox += `</div>`;
+
+	checkbox += `<label 
+                    for="input-checkbox-compare-${product.id}" 
+                    id="label-checkbox-compare-${product.id}"
+                    title>`;
+
+	checkbox += `<span>比較</span>`;
+	checkbox += `<span class="replace">產品比較</span>`;
+
+	checkbox += `</label>`;
+
+	checkbox += `</p>`;
+
+	return checkbox;
 }
 
 createItemPanel();
