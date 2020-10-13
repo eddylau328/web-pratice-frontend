@@ -8,7 +8,7 @@ function createItemPanel() {
 	products.forEach((product) => {
 		let productLabelToggle = checkboxLabelToggle();
 		$('#product-panel-columns').append(getItem(product));
-		$(`#input-checkbox-compare-${product.id}`).change((div)=>{
+		$(`#input-checkbox-compare-${product.id}`).change((div) => {
 			productLabelToggle(product);
 		});
 	});
@@ -16,17 +16,16 @@ function createItemPanel() {
 
 function checkboxLabelToggle() {
 	let state = true;
-	return function(product) {
+	return function (product) {
 		let labelCheckbox = $(`#label-checkbox-compare-${product.id}`);
 		if (state) {
-			labelCheckbox.find('span').css("display", "none");
-			labelCheckbox.find('.replace').css("display", "inline");
+			labelCheckbox.find('span').css('display', 'none');
+			labelCheckbox.find('.replace').css('display', 'inline');
 		} else {
-			labelCheckbox.find('span').css("display", "inline");
-			labelCheckbox.find('.replace').css("display", "none");	
+			labelCheckbox.find('span').css('display', 'inline');
+			labelCheckbox.find('.replace').css('display', 'none');
 		}
 		state = !state;
-		console.log(`${product.id} : ${state}`);
 	};
 }
 
@@ -156,7 +155,6 @@ function getCompareCheckBox(product) {
 }
 
 $(document).ready(function () {
-	
 	createItemPanel();
 
 	$('.checker').hover(
