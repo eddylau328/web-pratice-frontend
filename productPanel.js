@@ -1,7 +1,8 @@
 function createItemPanel() {
-	let productPanel = document.getElementById('product-panel');
 	let panelList = '';
-	panelList += `<ul id="product-panel-columns">`;
+	panelList += `<ul 
+					id="product-panel-columns" 
+					class="ProductsPanel product-list thumbnails col_3">`;
 
 	products.forEach((product) => {
 		panelList += getItem(product);
@@ -9,7 +10,7 @@ function createItemPanel() {
 
 	panelList += `</ul>`;
 
-	productPanel.innerHTML += panelList;
+	$('#product-panel').append(panelList);
 }
 
 function getItem(product) {
@@ -17,7 +18,8 @@ function getItem(product) {
 	// start
 	item += `<li 
                 id="li-${product.id}" 
-                page-index="0" 
+				page-index="0"
+				class="span4 products title-separate" 
                 style="height: 448px;">`;
 
 	item += `<div 
@@ -144,5 +146,16 @@ function getCompareCheckBox(product) {
 
 	return checkbox;
 }
+
+$(document).ready(function () {
+	$('.checker').hover(
+		function () {
+			$(this).addClass('hover');
+		},
+		function () {
+			$(this).removeClass('hover');
+		}
+	);
+});
 
 createItemPanel();
