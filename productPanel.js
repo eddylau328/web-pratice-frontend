@@ -2,7 +2,7 @@ function createItemPanel() {
 	let panelList = '';
 	panelList += `<div 
 					id="product-panel-columns" 
-					class="product-list"></div>`;
+					class="product-list grid"></div>`;
 	$('#product-panel').append(panelList);
 
 	products.forEach((product) => {
