@@ -87,13 +87,13 @@ h2 {
 	/* border: 1px solid green; */
 }
 
-.product-price span {
+.product-price > span {
 	font-size: 14px;
 	color: #000000;
 	font-weight: bold;
 }
 
-.product-price a {
+.product-price > a {
 	font-size: 14px;
 	color: #000000;
 	text-decoration: none;
@@ -111,7 +111,15 @@ h2 {
 	vertical-align: middle;
 }
 
-.product-compare span {
+.product-compare > label > span {
+	display: inline;
+}
+
+.product-compare > label > .replace {
+	display: none;
+}
+
+.product-compare > span {
 	min-height: 0px;
 	display: inline-flex;
 	align-items: center;
