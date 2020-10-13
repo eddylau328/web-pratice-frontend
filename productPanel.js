@@ -14,24 +14,13 @@ function createItemPanel() {
 			// update the checkbox word to other one
 			productLabelToggle(product);
 		});
+
 		// Screen Size change the checkbox need to be the same word or not
+		let productLabelNameToggle = checkboxLabelNameToggle();
+		// initialize label name
+		productLabelNameToggle(product);
 		$(window).resize(() => {
-			// window.innerWidth is much accurate than $(window).width()
-			if (window.innerWidth <= 500) {
-				// change functionality for smaller screens
-				$(`#label-checkbox-compare-${product.id}`)
-					.find('span')
-					.text('產品比較');
-				$(`#label-checkbox-compare-${product.id}`)
-					.find('.replace')
-					.text('產品比較');
-			} else {
-				// change functionality for larger screens
-				$(`#label-checkbox-compare-${product.id}`).find('span').text('比較');
-				$(`#label-checkbox-compare-${product.id}`)
-					.find('.replace')
-					.text('產品比較');
-			}
+			productLabelNameToggle(product);
 		});
 	});
 }
@@ -48,6 +37,44 @@ function checkboxLabelToggle() {
 			labelCheckbox.find('.replace').css('display', 'none');
 		}
 		state = !state;
+	};
+}
+
+// change the name when the window size is <= / > than assigned value
+function checkboxLabelNameToggle() {
+	let windowChange = false;
+	let lastwindowWidth = null;
+	return function (product) {
+		// window.innerWidth is much accurate than $(window).width()
+		let windowWidth = window.innerWidth;
+		let smallerWindow;
+
+		if (lastwindowWidth === null) {
+			windowChange = true;
+			smallerWindow = windowWidth <= 500;
+		} else if (windowWidth <= 500 && lastwindowWidth > 500) {
+			windowChange = true;
+			smallerWindow = true;
+		} else if (windowWidth > 500 && lastwindowWidth <= 500) {
+			windowChange = true;
+			smallerWindow = false;
+		} else {
+			windowChange = false;
+		}
+
+		if (windowChange) {
+			let labelCheckbox = $(`#label-checkbox-compare-${product.id}`);
+			if (smallerWindow) {
+				// change functionality for smaller screens
+				labelCheckbox.find('span').text('產品比較');
+				labelCheckbox.find('.replace').text('產品比較');
+			} else {
+				// change functionality for larger screens
+				labelCheckbox.find('span').text('比較');
+				labelCheckbox.find('.replace').text('產品比較');
+			}
+		}
+		lastwindowWidth = windowWidth;
 	};
 }
 
@@ -124,6 +151,33 @@ function getItemImage(product) {
 
 function getItemRating(product) {
 	let rating = '';
+	stars =
+		'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/RatingStars-on.png?v=1-201608042014';
+	emptyStars =
+		'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/RatingStars.png?v=1-201608042014';
+
+	if (product.rating) {
+		let ratingPercentage = (product.rating / 5.0) * 100;
+		rating += `<a
+					 class="product-rating" 
+					 href="${product.link}">`;
+
+		rating += `<div id="rating-wrapper-${product.id}" class="rating-wrapper">`;
+
+		rating += `<div class="rating">`;
+		rating += `<img id="empty-stars-${product.id}" src="${emptyStars}" alt="Rating Stars Off" data-src="https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/RatingStars.png?v=1-201608042014" class="lazyload" title="Rating Stars Off">`;
+		rating += `<div id="rating-stars-${product.id}" style="Width:${ratingPercentage}%;">`;
+		rating += `<img id="full-stars-${product.id}" src="${stars}" alt="Rating Stars On" data-src="https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/RatingStars-on.png?v=1-201608042014" class="lazyload">`;
+		rating += `</div>`;
+		rating += `</div>`;
+
+		rating += `<span class="reviewtxt">(<span id="review-${product.id}">${product.reviewText}</span>)</span>`;
+
+		rating += `</div>`;
+
+		rating += `</a>`;
+	}
+
 	return rating;
 }
 
@@ -134,7 +188,7 @@ function getItemPrice(product) {
 
 	price += `<span 
                 id="span-price-${product.id}">`;
-	price += `$${product.price}`;
+	price += `$${product.price.toFixed(2)}`;
 	price += `</span>`;
 	price += `&nbsp;`;
 	price += `<a 
@@ -156,20 +210,20 @@ function getCompareCheckBox(product) {
 
 	checkbox += `<div
 					class="checker">`;
-
+	checkbox += `<div class="pretty p-default" id>`;
 	checkbox += `<input 
                     name="input-checkbox-compare-name-${product.id}" 
                     type="checkbox" 
-                    id="input-checkbox-compare-${product.id}">`;
-
+					id="input-checkbox-compare-${product.id}">`;
+	checkbox += `<div class="state">`;
 	checkbox += `<label 
                     for="input-checkbox-compare-${product.id}" 
-                    id="label-checkbox-compare-${product.id}"
-                    title>`;
+                    id="label-checkbox-compare-${product.id}">`;
 	checkbox += `<span>比較</span>`;
 	checkbox += `<span class="replace">產品比較</span>`;
 	checkbox += `</label>`;
-
+	checkbox += `</div>`;
+	checkbox += `</div>`;
 	checkbox += `</div>`;
 
 	return checkbox;
@@ -177,13 +231,4 @@ function getCompareCheckBox(product) {
 
 $(document).ready(function () {
 	createItemPanel();
-
-	$('.checker').hover(
-		function () {
-			$(this).addClass('hover');
-		},
-		function () {
-			$(this).removeClass('hover');
-		}
-	);
 });

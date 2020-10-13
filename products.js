@@ -6,12 +6,11 @@ const products = [
 		engName: 'Regenerist Micro-sculpting Super Cream',
 		description:
 			'第5代皇牌Super Cream以「三重膠原技術」，刺激膠原蛋白400%增生，全方位提升膠原，同時抗氧化、補濕鎖水、保持水油平衡。',
-		rating: 3.0,
+		rating: 3,
+		reviewText: 7,
 		price: 269.0,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/Regenerist%20Super%20sculpting%20cream/3_1200x1200.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-202009161350',
-		ratingImage:
-			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/RatingStars-on.png?v=1-201608042014',
 		link:
 			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-micro-sculpting-super-cream',
 	},
@@ -33,7 +32,8 @@ const products = [
 		chiName: '新生高效輕盈緊緻日霜',
 		engName: 'Regenerist Micro-sculpting Super Day Cream SPF30',
 		description: '美國進口防曬日霜，促進膠原蛋白增生，日間輕盈抗UV',
-		rating: 4.0,
+		rating: 4,
+		reviewText: 1,
 		price: 239.9,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_dc.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201706031115',
@@ -47,7 +47,8 @@ const products = [
 		engName: 'Regenerist Miracle Boost Youth Pre-Essence',
 		description:
 			'「導入+精華」一瓶搞定，瞬透15層肌底，加強後續修護精華深層滲透',
-		rating: 5.0,
+		rating: 5,
+		reviewText: 1,
 		price: 289.9,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_6.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201802260630',
@@ -60,7 +61,8 @@ const products = [
 		chiName: '新生高效緊緻精華露',
 		engName: 'Regenerist Micro-sculpting Super Serum',
 		description: '雙重氨基酸肽專利的抗老化配方，重塑彈性，減褪細紋',
-		rating: 3.0,
+		rating: 3,
+		reviewText: 1,
 		price: 239.9,
 		image:
 			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_1.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201802260630',
