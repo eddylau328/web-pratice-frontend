@@ -81,4 +81,31 @@ const products = [
 		link:
 			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-deep-clean-foam-cleanser',
 	},
+	{
+		id: 'product-5',
+		brand: 'OLAY',
+		chiName: '新生肌源青春精華露',
+		engName: 'Regenerist Miracle Boost Youth Pre-Essence',
+		description:
+			'「導入+精華」一瓶搞定，瞬透15層肌底，加強後續修護精華深層滲透',
+		rating: 5,
+		reviewText: 1,
+		price: 289.9,
+		image:
+			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_6.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201802260630',
+		link:
+			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-miracle-boost-concentrate',
+	},
+	{
+		id: 'product-2',
+		brand: 'OLAY',
+		chiName: '新生高效緊緻活膚露',
+		engName: 'Regenerist Micro-sculpting Super Essence Water',
+		description: '蘊含近90%精華成分，極致保濕，減淡細紋，重現無痕緊緻',
+		price: 219.9,
+		image:
+			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Products/RG/RG_220_4.jpg?h=202&la=zh-HK&mw=202&w=202&v=1-201802260630',
+		link:
+			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-micro-sculpting-essence-water',
+	},
 ];

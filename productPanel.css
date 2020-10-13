@@ -160,13 +160,10 @@ h2 {
 
 .product-rating .rating-wrapper {
 	width: 184px;
+	height: 26px;
 	margin: 0 auto;
 	padding: 7px 0;
-}
-
-.product-rating .rating-wrapper {
 	font-size: 0.875em;
-	padding: 4px 0;
 }
 
 .product-rating .rating-wrapper .rating {
