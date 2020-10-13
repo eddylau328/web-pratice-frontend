@@ -6,10 +6,32 @@ function createItemPanel() {
 	$('#product-panel').append(panelList);
 
 	products.forEach((product) => {
-		let productLabelToggle = checkboxLabelToggle();
 		$('#product-panel-columns').append(getItem(product));
-		$(`#input-checkbox-compare-${product.id}`).change((div) => {
+
+		// Handles the checkbox change word
+		let productLabelToggle = checkboxLabelToggle();
+		$(`#input-checkbox-compare-${product.id}`).change(() => {
+			// update the checkbox word to other one
 			productLabelToggle(product);
+		});
+		// Screen Size change the checkbox need to be the same word or not
+		$(window).resize(() => {
+			// window.innerWidth is much accurate than $(window).width()
+			if (window.innerWidth <= 500) {
+				// change functionality for smaller screens
+				$(`#label-checkbox-compare-${product.id}`)
+					.find('span')
+					.text('產品比較');
+				$(`#label-checkbox-compare-${product.id}`)
+					.find('.replace')
+					.text('產品比較');
+			} else {
+				// change functionality for larger screens
+				$(`#label-checkbox-compare-${product.id}`).find('span').text('比較');
+				$(`#label-checkbox-compare-${product.id}`)
+					.find('.replace')
+					.text('產品比較');
+			}
 		});
 	});
 }
@@ -134,13 +156,11 @@ function getCompareCheckBox(product) {
 
 	checkbox += `<div
 					class="checker">`;
-	checkbox += `<span>`;
+
 	checkbox += `<input 
                     name="input-checkbox-compare-name-${product.id}" 
                     type="checkbox" 
                     id="input-checkbox-compare-${product.id}">`;
-	checkbox += `</span>`;
-	checkbox += `</div>`;
 
 	checkbox += `<label 
                     for="input-checkbox-compare-${product.id}" 

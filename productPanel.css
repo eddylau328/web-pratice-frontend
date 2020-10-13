@@ -130,15 +130,16 @@ h2 {
 	margin: 0px;
 }
 
-.checker {
+.checker input {
 	vertical-align: middle;
 }
 
-.product-compare > label > span {
+.product-compare > .checker > label > span {
+	vertical-align: middle;
 	display: inline;
 }
 
-.product-compare > label > .replace {
+.product-compare > .checker > label > .replace {
 	display: none;
 }
 
@@ -154,7 +155,7 @@ h2 {
 
 /* Mobile Display Size */
 
-@media (max-width: 550px) {
+@media (max-width: 500px) {
 	.grid {
 		background: transparent;
 		border: 0 none;
@@ -208,7 +209,31 @@ h2 {
 	}
 
 	.product-compare {
+		display: flex;
 		justify-content: left;
 		width: 100%;
+	}
+
+	.product-compare > .checker > label {
+		float: left;
+		padding: 5px 0px 5px 0px;
+		width: 80px;
+		color: #000000;
+		background-color: #ffffff;
+		border: 1px solid #000000;
+		border-radius: 32px;
+		text-align: center;
+		content: '產品比較';
+	}
+
+	.checker input[type='checkbox'] {
+		opacity: 0;
+	}
+
+	.checker input[type='checkbox']:checked + label {
+		border-color: transparent;
+		background-color: #d6b68e;
+		color: #ffffff;
+		text-decoration: underline;
 	}
 }
