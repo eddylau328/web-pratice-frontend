@@ -82,7 +82,7 @@ const products = [
 			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-deep-clean-foam-cleanser',
 	},
 	{
-		id: 'product-5',
+		id: 'product-7',
 		brand: 'OLAY',
 		chiName: '新生肌源青春精華露',
 		engName: 'Regenerist Miracle Boost Youth Pre-Essence',
@@ -97,7 +97,7 @@ const products = [
 			'https://www.olay.com.hk/zh-hk/skin-care-products/regenerist-miracle-boost-concentrate',
 	},
 	{
-		id: 'product-2',
+		id: 'product-8',
 		brand: 'OLAY',
 		chiName: '新生高效緊緻活膚露',
 		engName: 'Regenerist Micro-sculpting Super Essence Water',
