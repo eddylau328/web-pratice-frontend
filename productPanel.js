@@ -1,6 +1,6 @@
 function createItemPanel() {
 	let panelList = '';
-	panelList += `<ul 
+	panelList += `<div 
 					id="product-panel-columns" 
 					class="ProductsPanel product-list thumbnails col_3">`;
 
@@ -8,7 +8,7 @@ function createItemPanel() {
 		panelList += getItem(product);
 	});
 
-	panelList += `</ul>`;
+	panelList += `</div>`;
 
 	$('#product-panel').append(panelList);
 }
@@ -16,14 +16,9 @@ function createItemPanel() {
 function getItem(product) {
 	let item = '';
 	// start
-	item += `<li 
-                id="li-${product.id}" 
-				page-index="0"
-				class="span4 product title-separate" 
-                style="height: 448px;">`;
-
 	item += `<div 
-                id="div-${product.id}">`;
+				id="div-${product.id}"
+				class="product">`;
 
 	item += getItemImage(product);
 	item += getItemCaption(product);
@@ -31,7 +26,7 @@ function getItem(product) {
 	item += `<div class="clearfix"></div>`;
 	// end
 	item += `</div>`;
-	item += `</li>`;
+
 	return item;
 }
 
