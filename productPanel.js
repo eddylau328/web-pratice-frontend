@@ -18,22 +18,35 @@ function getItem(product) {
 	item += `<li 
                 id="li-${product.id}" 
                 page-index="0" 
-                style="height: 456px; 
-                cursor: pointer;">`;
+                style="height: 448px;">`;
 
 	item += `<div 
                 id="div-${product.id}">`;
 
 	item += getItemImage(product);
-	item += getItemHeading(product);
-	item += getItemDescription(product);
-	if (product.rating) item += getItemRating(product);
-	item += getItemPrice(product);
-	item += getCompareCheckBox(product);
+	item += getItemCaption(product);
+	item += `<div class="dtc-error-message"></div>`;
+	item += `<div class="clearfix"></div>`;
 	// end
 	item += `</div>`;
 	item += `</li>`;
 	return item;
+}
+
+function getItemCaption(product) {
+	let caption = '';
+	caption += `<div 
+					class="caption" 
+					style="height: 219px;">`;
+	caption += getItemHeading(product);
+	caption += getItemDescription(product);
+
+	if (product.rating) caption += getItemRating(product);
+	caption += getItemPrice(product);
+	caption += getCompareCheckBox(product);
+
+	caption += `</div>`;
+	return caption;
 }
 
 function getItemHeading(product) {
@@ -57,7 +70,7 @@ function getItemDescription(product) {
 function getItemImage(product) {
 	let image = '';
 	image += `<div 
-                id="div-image-${product.id}">`;
+                class="product-image">`;
 
 	image += `<a 
                 id="anchor-image-${product.id}" 
