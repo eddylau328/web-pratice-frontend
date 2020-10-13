@@ -32,17 +32,18 @@ function checkboxLabelToggle() {
 function getItem(product) {
 	let item = '';
 	// start
+	item += `<div
+				class="product-tile">`;
 	item += `<div 
 				id="div-${product.id}"
 				class="product">`;
-
 	item += getItemImage(product);
 	item += getItemCaption(product);
 	item += `<div class="dtc-error-message"></div>`;
 	item += `<div class="clearfix"></div>`;
 	// end
 	item += `</div>`;
-
+	item += `</div>`;
 	return item;
 }
 
