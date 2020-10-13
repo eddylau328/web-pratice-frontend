@@ -19,7 +19,7 @@ function getItem(product) {
 	item += `<li 
                 id="li-${product.id}" 
 				page-index="0"
-				class="span4 products title-separate" 
+				class="span4 product title-separate" 
                 style="height: 448px;">`;
 
 	item += `<div 
@@ -38,8 +38,7 @@ function getItem(product) {
 function getItemCaption(product) {
 	let caption = '';
 	caption += `<div 
-					class="caption" 
-					style="height: 219px;">`;
+					class="caption">`;
 	caption += getItemHeading(product);
 	caption += getItemDescription(product);
 
@@ -56,8 +55,8 @@ function getItemHeading(product) {
 	let heading = '';
 	heading += `<a 
                 id="anchor-heading-${product.id}" 
-                title="${product.brand} ${product.chiName} ${product.engName}">`;
-	heading += `<h2>${product.brand} ${product.chiName}&nbsp;${product.engName}</h2>`;
+				title="${product.brand} ${product.chiName} ${product.engName}">`;
+	heading += `<h2 class="product-heading">${product.brand} ${product.chiName}&nbsp;${product.engName}</h2>`;
 	heading += `</a>`;
 	return heading;
 }
@@ -65,7 +64,7 @@ function getItemHeading(product) {
 function getItemDescription(product) {
 	// item description
 	let description = '';
-	description += `<p>${product.description}</p>`;
+	description += `<p class="product-description">${product.description}</p>`;
 	return description;
 }
 
@@ -103,7 +102,7 @@ function getItemPrice(product) {
                 id="span-price-${product.id}">`;
 	price += `$${product.price}`;
 	price += `</span>`;
-
+	price += `&nbsp;`;
 	price += `<a 
                 id="anchor-price-${product.id}" 
                 href="${product.link}#msrp">`;
@@ -117,13 +116,12 @@ function getItemPrice(product) {
 
 function getCompareCheckBox(product) {
 	let checkbox = '';
-	checkbox += `<p 
-                id="p-checkbox-compare-${product.id}" 
-                class="product-compare">`;
 	checkbox += `<div 
-                    class="checker" 
-                    id="div-checkbox-compare-${product.id}">`;
+                id="p-checkbox-compare-${product.id}" 
+				class="product-compare">`;
 
+	checkbox += `<div
+					class="checker">`;
 	checkbox += `<span>`;
 	checkbox += `<input 
                     name="input-checkbox-compare-name-${product.id}" 
@@ -136,13 +134,11 @@ function getCompareCheckBox(product) {
                     for="input-checkbox-compare-${product.id}" 
                     id="label-checkbox-compare-${product.id}"
                     title>`;
-
 	checkbox += `<span>比較</span>`;
 	checkbox += `<span class="replace">產品比較</span>`;
-
 	checkbox += `</label>`;
 
-	checkbox += `</p>`;
+	checkbox += `</div>`;
 
 	return checkbox;
 }

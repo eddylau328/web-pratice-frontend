@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+div {
+	display: block;
+}
+
+p {
+	display: block;
+}
+
+h2 {
+	display: block;
+}
+
+ul {
+	display: block;
+}
+
+/* ---------- CLASSES ---------- */
+.products-container {
+	margin-top: 0%;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: rgb(124, 124, 124);
+	float: left;
+	width: 100%;
+}
+
+.grid {
+	background: transparent;
+	border: 0 none;
+	margin: 0 2% 35px 2%;
+	min-height: 448px;
+	padding: 0 0.8%;
+}
+
+.product-list {
+	padding-left: 0;
+	padding-top: 10px;
+	width: 100%;
+	overflow: hidden;
+	list-style-type: none;
+}
+
+.product {
+	float: left;
+}
+
+.caption {
+	font-family: Helvetica;
+	font-size: 14px;
+	color: #000000;
+	padding: 5px 5px 10px 5px;
+	background: #ffffff;
+	width: 192px;
+	height: 219px;
+	margin: 0px;
+	text-align: center;
+	border: 1px solid green;
+}
+
+.product-heading {
+	font-size: 14px;
+	color: #000000;
+	margin: 0px;
+	word-wrap: break-word;
+	width: 100%;
+	text-align: center;
+	border: 1px solid green;
+}
+
+.product-description {
+	font-size: 12px;
+	color: #7c7c7c;
+	padding-top: 10px;
+	word-wrap: break-word;
+	width: 100%;
+	text-align: center;
+	margin: 0px;
+	border: 1px solid green;
+}
+
+.product-price {
+	padding-top: 9px;
+	word-wrap: break-word;
+	width: 100%;
+	text-align: center;
+	border: 1px solid green;
+}
+
+.product-price span {
+	font-size: 14px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.product-price a {
+	font-size: 14px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.product-compare {
+	padding-top: 7px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin: 0px;
+}
+
+.checker {
+	vertical-align: middle;
+}
+
+.product-compare span {
+	min-height: 0px;
+	display: inline-flex;
+	align-items: center;
+	/* border: 1px solid aqua; */
+}
+
+/* .hover {
+} */
