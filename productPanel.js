@@ -229,6 +229,25 @@ function getCompareCheckBox(product) {
 	return checkbox;
 }
 
+function changeViewLogoImgSrc(gridLogo, listLogo) {
+	$('.product-grid-view').find('img').attr('src', gridLogo);
+	$('.product-list-view').find('img').attr('src', listLogo);
+}
+
 $(document).ready(function () {
 	createItemPanel();
+
+	$('.product-grid-view').click(() => {
+		changeViewLogoImgSrc(
+			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/GridViewIcon-on.png?v=1-201706011328',
+			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/ListViewIcon.png?v=1-201706011328'
+		);
+	});
+
+	$('.product-list-view').click(() => {
+		changeViewLogoImgSrc(
+			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/GridViewIcon.png?v=1-201706011328',
+			'https://res.cloudinary.com/mtree/image/upload/f_auto,q_auto/Olay_HK/zh-hk/-/media/Olay_HK/Images/Common%20Icons/ListViewIcon-on.png?v=1-201706011328'
+		);
+	});
 });

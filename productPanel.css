@@ -18,15 +18,38 @@ h2 {
 
 /* ---------- CLASSES ---------- */
 
-.products-container {
-	/* border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: rgb(124, 124, 124); */
-	/* display: flex;
-	flex-direction: row;
-	justify-content: center;
-	flex-wrap: wrap;
-	max-width: 700px; */
+.view_count {
+	display: block;
+}
+
+.count-container {
+	color: #7c7c7c;
+	font-size: 16px;
+	line-height: 30px;
+	text-transform: none;
+}
+
+.filter-wraper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.filter-wraper .product-view-types a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.filter-wraper .filter-container button {
+	border-radius: 32px;
+	background-color: #ffffff;
+	border: 1.5px solid #000000;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.filter-wraper .filter-container button:focus {
+	background-color: #000000;
+	color: #ffffff;
 }
 
 /* PC Display Size */
@@ -204,6 +227,10 @@ h2 {
 /* Mobile Display Size */
 
 @media (max-width: 500px) {
+	.count-container {
+		font-size: 12px;
+	}
+
 	.grid {
 		background: transparent;
 		border: 0 none;
